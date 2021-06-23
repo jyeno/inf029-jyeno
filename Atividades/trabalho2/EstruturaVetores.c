@@ -259,7 +259,7 @@ int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho)
         }
     }
 
-    int **novaEstrutura = reallocarray(vetorPrincipal[posicao], sizeof(int*), novoTam + 1);
+    int **novaEstrutura = realloc(vetorPrincipal[posicao], sizeof(int*) * (novoTam + 1));
     if (!novaEstrutura) return SEM_ESPACO_DE_MEMORIA;
 
     if (novoTam > atualTam) {
